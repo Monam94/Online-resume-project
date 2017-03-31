@@ -24,7 +24,11 @@ bio.display = function () {
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedImage = HTMLbioPic.replace("%data%", bio.image);
     var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").prepend(formattedName, formattedRole).append(formattedImage, formattedMessage);
+    $("#header").prepend(formattedImage);
+    $("#header").prepend(formattedMessage);
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+    $("#header").append(HTMLskillsStart);
     $("#header").append(HTMLskillsStart);
     for (var skill = 0; skill < bio.skills.length; skill++) {
         var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
