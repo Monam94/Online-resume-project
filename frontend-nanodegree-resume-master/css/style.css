@@ -1,8 +1,8 @@
-* {
+*{
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
-  list-style: none;
+  
 }
 
 .clear-fix {
@@ -17,7 +17,7 @@
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #c6322e;
   line-height: 48px;
   display: inline;
 }
@@ -25,7 +25,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #5a5f75;
   line-height: 29px;
   padding: 10px;
 }
@@ -33,14 +33,14 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #eaeff3;
   line-height: 22px;
 }
 
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4a4a4a;
+  color: #446b59;
   line-height: 17px;
 }
 
@@ -152,10 +152,12 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+ border-radius: 500px;
 }
 
 img {
   padding: 10px;
+  
 }
 
 span {
