@@ -10,18 +10,18 @@ var bio = {
         "mobile": "201114169989",
         "email": "monam0750@gmail.com",
         "github": "Monam94",
-        "location": "Egypt"  
+        "location" : "Egypt"   
     },
     "welcomeMessage": "I'm Mona Maher Mostafa , front-end web developer, I'm graduated from faculty of computers and informatics, I plan to finish the Front-End Nanodegree at Udacity",
     "skills": ["HTML5", "CSS3", "Javascript", "Bootstrap", "C#" ],
-    "bioPic": "images/m.jpg"
+    "biopic": "images/m.jpg"
 };
 
 
 bio.display = function () {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    var formattedImage = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").prepend(formattedImage);
     $("#header").prepend(formattedMessage);
@@ -55,17 +55,27 @@ bio.display = function () {
 };
 
 
+
 work.display = function() {
-    for( job in work.jobs) {
-        $("#workExperience").append(HTMLworkStart);
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-        $(".work-entry:last").append(formattedEmployer + formattedTitle, formattedDates, formattedLocation, formattedDescription);
-    }
+	for (var i = 0; i < work.jobs.length; i++) {
+		$("#workExperience").append(HTMLworkStart);
+		
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+		$(".work-entry:last").append(formattedEmployerTitle);
+		
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+		$(".work-entry:last").append(formattedDates);
+		
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+		$(".work-entry:last").append(formattedLocation);
+		
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+		$(".work-entry:last").append(formattedDescription);
+	};
 };
+
 
 
 
@@ -111,7 +121,7 @@ var education = {
         "name": "Fresh Graduated",
         "location": "Benha University , Egypt",
         "degree": "B.S",
-        "major": ["Computer Science"],
+        "majors": ["Computer Science , Software engineering"],
         "dates": "2012-2016",
         "url": "http://www.fci.bu.edu.eg/fci/en/"
     }],
@@ -135,7 +145,7 @@ education.display = function() {
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
         $(".education-entry:last").append(formattedName + formattedDegree, formattedDates, formattedLocation, formattedMajor);
     }
     
