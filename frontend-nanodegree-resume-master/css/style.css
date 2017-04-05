@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  list-style: none;
   
 }
 
@@ -33,7 +34,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #eaeff3;
+  color: #5a5f75;
   line-height: 22px;
 }
 
