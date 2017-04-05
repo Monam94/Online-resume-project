@@ -31,9 +31,10 @@ bio.display = function () {
     if(bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 
-	for(i in bio.skills) {
-		$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
-	}
+	for (var skill = 0; skill < bio.skills.length; skill++) {
+    var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
+    $("#header").append(formattedSkills);
+}
 }
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
@@ -100,13 +101,13 @@ var projects = {
 };
 
 projects.display = function() {
-    for ( item in projects.projects) {
+    for (var item=0; item< projects.projects.length; item++) {
         $("#projects").append(HTMLprojectStart);
         var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[item].title);
         var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[item].dates);
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[item].description);
         $(".project-entry:last").append(formattedTitle, formattedDates, formattedDescription);
-        for (var image in projects.projects[item].images) {
+        for (var image =0; image < projects.projects[item].images.length ; image++) {
             var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[item].images[image]);
             $(".project-entry:last").append(formattedImage);
         }
@@ -139,7 +140,7 @@ var education = {
 };
 
 education.display = function() {
-    for (var school in education.schools) {
+    for (var school=0; school< education.schools.length ; school++) {
         $("#education").append(HTMLschoolStart);
         var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
@@ -152,7 +153,7 @@ education.display = function() {
     if (education["onlineCourses"].length !== 0) {
         $("#education").append(HTMLonlineClasses);
     }
-    for (var course in education["onlineCourses"]) {
+    for (var course =0; course< education["onlineCourses"].length ; course++) {
         $("#education").append(HTMLschoolStart);
         var formattedTitle = HTMLonlineTitle.replace("%data%", education["onlineCourses"][course].title);
         var formattedSchool = HTMLonlineSchool.replace("%data%", education["onlineCourses"][course].school);
