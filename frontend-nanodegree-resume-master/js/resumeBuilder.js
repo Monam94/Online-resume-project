@@ -7,14 +7,14 @@ var bio = {
     "name": "Mona Maher",
     "role": "Front-End Web Developer",
     "contacts": {
-        "mobile": "201114169989",
+        "mobile": "2001222236657",
         "email": "monam0750@gmail.com",
         "github": "Monam94",
         "location" : "Egypt"   
     },
     "welcomeMessage": "I'm Mona Maher Mostafa , front-end web developer, I'm graduated from faculty of computers and informatics, I plan to finish the Front-End Nanodegree at Udacity",
     "skills": ["HTML5", "CSS3", "Javascript", "Bootstrap", "C#" ],
-    "biopic": "images/m.jpg"
+    "biopic": "images/fry.jpg"
 };
 
 
